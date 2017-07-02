@@ -1,0 +1,48 @@
+﻿@model auction.Models.BankView
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>BankView</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.AuctionName)
+
+        @Html.HiddenFor(model => model.AuctionDescription)
+
+        @Html.HiddenFor(model => model.AuctionToName)
+
+        @Html.HiddenFor(model => model.AuctionToMobilePhone)
+
+        @Html.HiddenFor(model => model.BankId)
+
+        @Html.HiddenFor(model => model.PersonId)
+
+        @Html.HiddenFor(model => model.AuctionId)
+
+        @Html.HiddenFor(model => model.Bank)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

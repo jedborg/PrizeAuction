@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e5c59b796b57446ea7cd853f5f0e49bd" Name="Diagram1">
+        <EntityTypeShape EntityType="PrizeAuctionModel.Auction" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.AuctionItem" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.AuctionItemType" Width="1.5" PointX="3" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.Bank" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.Bid" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.Person" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.AuctionItemView" Width="1.5" PointX="5.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.BankView" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PrizeAuctionModel.BidView" Width="1.5" PointX="7.75" PointY="5.875" IsExpanded="true" />
+        <AssociationConnector Association="PrizeAuctionModel.FK_AuctionItem_Auction" ManuallyRouted="false" />
+        <AssociationConnector Association="PrizeAuctionModel.FK_PersonAuctionBank1_Auction" ManuallyRouted="false" />
+        <AssociationConnector Association="PrizeAuctionModel.FK_AuctionItem_AuctionItemType" ManuallyRouted="false" />
+        <AssociationConnector Association="PrizeAuctionModel.FK_AuctionItem_Bid" ManuallyRouted="false" />
+        <AssociationConnector Association="PrizeAuctionModel.FK_Bid_AuctionItem" ManuallyRouted="false" />
+        <AssociationConnector Association="PrizeAuctionModel.FK_PersonAuctionBank1_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="PrizeAuctionModel.FK_Bid_Person" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

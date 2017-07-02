@@ -1,0 +1,42 @@
+﻿@model auction.Models.Bank
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bank</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bank1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bank1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Auction.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Auction.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Person.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Person.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BankId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

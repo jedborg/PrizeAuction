@@ -1,0 +1,80 @@
+﻿@model auction.Models.AuctionItemView
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>AuctionItemView</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.AuctionItemTypeName)
+
+        @Html.HiddenFor(model => model.AuctionDescription)
+
+        @Html.HiddenFor(model => model.AuctionName)
+
+        @Html.HiddenFor(model => model.AuctionActive)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BidPersonId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BidPersonId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BidPersonId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BidAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BidAmount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BidAmount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.BidderName)
+
+        @Html.HiddenFor(model => model.BidderMobilePhone)
+
+        @Html.HiddenFor(model => model.AuctionItemId)
+
+        @Html.HiddenFor(model => model.ItemTypeId)
+
+        @Html.HiddenFor(model => model.Name)
+
+        @Html.HiddenFor(model => model.Description)
+
+        @Html.HiddenFor(model => model.AuctionId)
+
+        @Html.HiddenFor(model => model.Auctioned)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BidId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BidId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BidId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
