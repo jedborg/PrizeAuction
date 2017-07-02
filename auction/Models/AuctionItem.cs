@@ -11,7 +11,8 @@ namespace auction.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class AuctionItem
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,11 +22,18 @@ namespace auction.Models
         }
     
         public int AuctionItemId { get; set; }
+
+        [Display(Name = "Prize Type")]
         public int ItemTypeId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+
+        [Display(Name = "Auction")]
         public int AuctionId { get; set; }
         public bool Auctioned { get; set; }
+
+        [Display(Name = "Bid")]
         public Nullable<int> BidId { get; set; }
     
         public virtual Auction Auction { get; set; }

@@ -11,7 +11,8 @@ namespace auction.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Bid
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,15 @@ namespace auction.Models
         }
     
         public int BidId { get; set; }
+
+        [Display(Name = "Bidder")]
         public int PersonId { get; set; }
+
+
+        [Display(Name = "Prize")]
         public int AuctionItemId { get; set; }
+
+        [Display(Name = "Amount")]
         public decimal BidAmount { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

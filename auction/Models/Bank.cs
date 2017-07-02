@@ -11,12 +11,17 @@ namespace auction.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
     public partial class Bank
     {
         public int BankId { get; set; }
+
+        [Display(Name = "Person")]
         public int PersonId { get; set; }
+
+        [Display(Name = "Auction")]
         public int AuctionId { get; set; }
+
         public decimal Bank1 { get; set; }
     
         public virtual Auction Auction { get; set; }

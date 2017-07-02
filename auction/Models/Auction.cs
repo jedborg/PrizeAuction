@@ -11,7 +11,8 @@ namespace auction.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Auction
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,6 +24,8 @@ namespace auction.Models
     
         public int AuctionId { get; set; }
         public bool Active { get; set; }
+
+        [Display(Name = "Auction")]
         public string Name { get; set; }
         public string Description { get; set; }
     

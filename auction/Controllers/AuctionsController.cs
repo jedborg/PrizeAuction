@@ -115,6 +115,23 @@ namespace auction.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Select(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Auction auction = db.Auctions.Find(id);
+            if (auction == null)
+            {
+                return HttpNotFound();
+            }
+
+            Session["ActionId"] = auction.AuctionId;
+            Session["ActionName"] = auction.Name;
+
+            return RedirectToAction("Index"); ;
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)

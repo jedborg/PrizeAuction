@@ -50,10 +50,11 @@ namespace auction.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AuctionItemId,ItemTypeId,Name,Description,AuctionId,Auctioned,BidId")] AuctionItem auctionItem)
+        public ActionResult Create([Bind(Include = "AuctionItemId,ItemTypeId,Name,Description,AuctionId")] AuctionItem auctionItem)
         {
             if (ModelState.IsValid)
             {
+                auctionItem.Auctioned = false;
                 db.AuctionItems.Add(auctionItem);
                 db.SaveChanges();
                 return RedirectToAction("Index");

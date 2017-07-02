@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Prize Auction</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -16,13 +16,40 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Prize Auction", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Administration</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <div class="dropdown-item">@Html.ActionLink("Auctions", "Index", "Auctions")</div>
+                            <div class="dropdown-item">@Html.ActionLink("Prize Types", "Index", "AuctionItemTypes")</div>
+                            <div class="dropdown-item">@Html.ActionLink("Prizes", "Index", "AuctionItems")</div>
+                            <div class="dropdown-item">@Html.ActionLink("People", "Index", "People")</div>
+
+
+
+                            
+                            @*<a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>*@
+                        </div>
+                    </li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>
+                        @if(Session["ActionId"] != null && Session["ActionId"].ToString() != "")
+                        {
+                            @Html.ActionLink("Selected Auction: " + Session["ActionName"], "Index", "Auctions")
+                        }
+                        else
+                        {
+                            <span style="color:red; font-weight:bold">@Html.ActionLink("Select an Auction", "Index", "Auctions")</span>
+                        }
+                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -31,7 +58,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - My Prize Auction</p>
         </footer>
     </div>
 
