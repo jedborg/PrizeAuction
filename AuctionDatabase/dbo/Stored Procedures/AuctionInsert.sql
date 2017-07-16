@@ -1,4 +1,4 @@
-﻿CREATE PROC [dbo].[AuctionInsert] 
+﻿alter PROC [dbo].[AuctionInsert] 
     @Active bit,
     @Name varchar(50),
     @Description varchar(255)
