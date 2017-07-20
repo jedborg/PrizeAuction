@@ -10,5 +10,6 @@ namespace auction.ViewModel
     {
         public Person Bidder { get; set; }
         public List<AuctionItem> AucationItems{ get; set; }
+        //test
     }
 }
