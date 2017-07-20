@@ -13,7 +13,7 @@ namespace auction.Controllers
     public class BidsController : Controller
     {
         private PrizeAuctionEntities db = new PrizeAuctionEntities();
-
+        
         // GET: Bids
         public ActionResult Index()
         {
